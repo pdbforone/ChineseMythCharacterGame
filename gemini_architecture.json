@@ -1,0 +1,827 @@
+[
+  {
+    "lesson": 1,
+    "title": "The Mouth That Counted the Universe",
+    "saga": "Genesis",
+    "hook": "In the beginning, there was nothing but a single horizontal line, until a hungry Mouth appeared.",
+    "architecture": {
+      "opening": ["one", "two", "three"],
+      "rising": ["four", "five", "six", "seven"],
+      "conflict": ["eight", "nine"],
+      "climax": ["ten", "Mouth"],
+      "resolution": ["Day", "Month", "Rice Field", "Eye"]
+    },
+    "callbacks": [],
+    "absurdist": "The Mouth tries to eat the number Ten but chokes, coughing up the Sun (Day) and Moon (Month)."
+  },
+  {
+    "lesson": 2,
+    "title": "The Ancient Singer of Dawn",
+    "saga": "Genesis",
+    "hook": "An ancient being decided that being alone was boring, so he recklessly invented singing.",
+    "architecture": {
+      "opening": ["ancient", "recklessly", "I  [literary]"],
+      "rising": ["Companion", "bright", "to sing", "sparkling", "Goods"],
+      "conflict": ["prosperous", "early", "Rising Sun"],
+      "climax": ["Generation", "Stomach", "Daybreak"],
+      "resolution": ["concave", "convex"]
+    },
+    "callbacks": ["Sun/Day from Lesson 1 returns as Rising Sun"],
+    "absurdist": "The singer's Stomach grumbles so loud at Daybreak it bends the earth into concave and convex shapes."
+  },
+  {
+    "lesson": 3,
+    "title": "The Emperor of Measurement",
+    "saga": "Empire",
+    "hook": "The Emperor loved himself so much he tried to measure his own tongue.",
+    "architecture": {
+      "opening": ["oneself", "white", "hundred", "Soap"],
+      "rising": ["Middle", "thousand", "Tongue", "Liter"],
+      "conflict": ["to rise up", "昇", "Pill", "Divination"],
+      "climax": ["to tell fortunes", "above", "below", "Card"],
+      "resolution": ["eminent", "Dynasty", "to ridicule"]
+    },
+    "callbacks": [],
+    "absurdist": "The Emperor swallows a Pill to rise up, but just floats above and below his throne while people ridicule him."
+  },
+  {
+    "lesson": 4,
+    "title": "The Shellfish Economy",
+    "saga": "Empire",
+    "hook": "In this strange land, money isn't gold; it's stubborn shellfish.",
+    "architecture": {
+      "opening": ["only", "Shellfish", "to paste", "chaste"],
+      "rising": ["Employee", "to see", "Beginning", "元", "Page"],
+      "conflict": ["stubborn", "ordinary", "凡", "Muscle", "defeated"],
+      "climax": ["uniform", "Sentence", "Decameron", "Ladle"],
+      "resolution": ["Bull's Eye", "Heads"]
+    },
+    "callbacks": [],
+    "absurdist": "The Employee is paid in Ladles of Shellfish, which he pastes to his forehead."
+  },
+  {
+    "lesson": 5,
+    "title": "The Workshop of Blades",
+    "saga": "Craft",
+    "hook": "The Older Brother set up a shop to sell tools, but he only knew how to make things sharp.",
+    "architecture": {
+      "opening": ["straight", "to set up", "Tool", "true", "the Work"],
+      "rising": ["Left", "Right", "to possess", "bribe", "Tribute"],
+      "conflict": ["Item", "Sword", "Blade", "to cut", "to summon"],
+      "climax": ["evident", "Rule", "vice—", "fourth"],
+      "resolution": ["to sting", "can", "Older Brother", "crest"]
+    },
+    "callbacks": [],
+    "absurdist": "The Older Brother bribes a Sword to cut a Tribute, but the Sword just stings him instead."
+  },
+  {
+    "lesson": 6,
+    "title": "The Child Who Roared",
+    "saga": "Family",
+    "hook": "The second child was not good; in fact, he was a piercing headache.",
+    "architecture": {
+      "opening": ["second", "child", "cavity"],
+      "rising": ["to roar", "—ed", "Woman", "good"],
+      "conflict": ["to be like", "Mother", "to pierce"],
+      "climax": ["Elder Brother", "to overcome"],
+      "resolution": ["brother"]
+    },
+    "callbacks": ["Older Brother from Lesson 5 returns"],
+    "absurdist": "The Child roars into a cavity so loud it pierces the Mother's patience."
+  },
+  {
+    "lesson": 7,
+    "title": "The Battle of Stones and Rays",
+    "saga": "Elements",
+    "hook": "A small stone decided it wanted to be a large sun.",
+    "architecture": {
+      "opening": ["small", "few", "noisy", "large"],
+      "rising": ["tip", "Evening", "many", "enough", "Outside"],
+      "conflict": ["a Name", "thick", "stone", "Gravel", "wonderful"],
+      "climax": ["to resemble", "to peel", "ray", "overly"],
+      "resolution": ["to economize", "strange"]
+    },
+    "callbacks": [],
+    "absurdist": "The Stone tries to peel itself to resemble a Ray of light but just becomes strange Gravel."
+  },
+  {
+    "lesson": 8,
+    "title": "The Flood and the Fire",
+    "saga": "Elements",
+    "hook": "The Water and the Fire had a truce, until the River got drunk on Juice.",
+    "architecture": {
+      "opening": ["Stream", "a state", "to obey", "Water", "Eternity", "to request"],
+      "rising": ["a Spring  [ie: Well]", "flatlands", "a wish", "to wash away", "to swim", "Continent", "Marsh", "Sand", "Yangtze"],
+      "conflict": ["Juice", "Tide", "source", "lively", "to extinguish", "Situation", "river", "Lake", "to fathom", "Soil", "to equal"],
+      "climax": ["belly", "to fill in", "to spit", "Waaah!", "Chinese Inch", "to seal", "Buddhist Temple", "Time", "Fire", "ashes", "vexed"],
+      "resolution": ["Inflammation", "thin (watery/bland)", "Disaster", "to illuminate", "a Fish", "Fishing", "Yáo", "Fever", "Dawn"]
+    },
+    "callbacks": [],
+    "absurdist": "The Fish gets a Fever and tries to extinguish the Fire by spitting Juice."
+  },
+  {
+    "lesson": 9,
+    "title": "The Black Ink Banquet",
+    "saga": "Craft",
+    "hook": "In a cave buried a thousand Li away, they hold a banquet where you eat only ink.",
+    "architecture": {
+      "opening": ["a Li [measurement]", "quantity", "to bury", "black", "Spot"],
+      "rising": ["Black Ink", "to risk", "same", "cave", "orientation", "to esteem"],
+      "conflict": ["character", "to guard", "to finish", "reality", "to proclaim", "Nighttime"],
+      "climax": ["peaceful", "Banquet", "to mail", "wealthy"],
+      "resolution": ["rich", "to store up"]
+    },
+    "callbacks": [],
+    "absurdist": "The wealthy guest tries to mail a Banquet through a cave but buries it in Black Ink instead."
+  },
+  {
+    "lesson": 10,
+    "title": "The Forest of Dim-Witted Trees",
+    "saga": "Nature",
+    "hook": "Not all forests are wise; this one is full of dim-witted apricot trees.",
+    "architecture": {
+      "opening": ["Tree", "Woods", "Forest", "to plant", "Apricot"],
+      "rising": ["dim-witted", "withered", "Village", "one another", "notebook", "legal case"],
+      "conflict": ["not yet", "Last", "Foam", "Flavor", "younger sister", "to investigate", "sediment", "to dye"],
+      "climax": ["Plum", "Table", "as if", "grass", "Suffering", "wide", "Leaf"],
+      "resolution": ["nobody", "to imitate", "Desert", "a Grave", "Seedling", "to aim"]
+    },
+    "callbacks": [],
+    "absurdist": "The dim-witted Tree tries to dye a Table with Foam but just creates a Flavor of Suffering."
+  },
+  {
+    "lesson": 11,
+    "title": "The Dog Who Cried Peach",
+    "saga": "Family",
+    "hook": "A remarkable dog discovered a portent: the sky was raining peaches.",
+    "architecture": {
+      "opening": ["Portent", "peach", "Pooch", "remarkable"],
+      "rising": ["silence", "sort of thing", "to cry", "Utensil", "stinking"],
+      "conflict": ["Dog", "to detest", "pressure", "Cow", "special"],
+      "climax": ["to declare", "vast", "before"],
+      "resolution": ["to wash"]
+    },
+    "callbacks": [],
+    "absurdist": "The Cow detests the stinking Dog and tries to wash it with a peach."
+  },
+  {
+    "lesson": 12,
+    "title": "The King's Golden Balls",
+    "saga": "Empire",
+    "hook": "The King introduced a new game to the world involving jade, tea, and insanity.",
+    "architecture": {
+      "opening": ["to introduce", "World", "Tea", "Meeting", "to fit"],
+      "rising": ["Ha!", "Pagoda", "King", "Jade", "Balls", "present", "to play"],
+      "conflict": ["crazy", "Emperor", "resplendent", "to submit", "whole", "Logic", "Lord", "to pour"],
+      "climax": ["the Gold", "Copper", "to go fishin'", "Needle", "Nail"],
+      "resolution": ["Inscription", "at ease"]
+    },
+    "callbacks": [],
+    "absurdist": "The Emperor goes crazy and tries to go fishin' using a Gold Needle and Jade Balls as bait."
+  },
+  {
+    "lesson": 13,
+    "title": "The Lotus Car Chase",
+    "saga": "Journey",
+    "hook": "The Tao (Way) is usually peaceful, but today it involves a speedy car chase.",
+    "architecture": {
+      "opening": ["Way", "to guide", "speedy", "to create", "to patrol"],
+      "rising": ["to stroll", "Car", "one after another", "Lotus", "in front", "Shears"],
+      "conflict": ["to transport", "to exceed", "each", "Pattern", "Guest"],
+      "climax": ["Forehead", "Summer", "L.A."],
+      "resolution": ["to fall"]
+    },
+    "callbacks": [],
+    "absurdist": "The Guest drives a Car made of Lotus flowers to L.A. but shears off his own forehead in a crash."
+  },
+  {
+    "lesson": 14,
+    "title": "The Soldier's Dream of Capital",
+    "saga": "Empire",
+    "hook": "The superfluous army marched toward the capital, carrying nothing but a dream.",
+    "architecture": {
+      "opening": ["superfluous", "profound", "Army", "Radiance", "to carry"],
+      "rising": ["Crown", "a Dream", "Pit", "tall", "to enjoy", "ripe"],
+      "conflict": ["Pavilion", "shining", "Capital", "cool", "Scenery", "at once"],
+      "climax": ["Circumference", "Week", "Soldier", "lucky"],
+      "resolution": ["to buy", "to sell"]
+    },
+    "callbacks": [],
+    "absurdist": "The Soldier tries to buy a lucky Crown but falls into a profound Pit of ripe fruit."
+  },
+  {
+    "lesson": 15,
+    "title": "The Police Poet",
+    "saga": "Spirit",
+    "hook": "The police didn't attack with weapons; they attacked with really bad poetry.",
+    "architecture": {
+      "opening": ["Book", "a Drawing", "to scratch", "to attack", "to fail"],
+      "rising": ["deliberately", "to rescue", "to revere", "spacious", "to say", "Police"],
+      "conflict": ["a Plan", "Prison", "to condemn", "Instruction", "the talk (spoken words)"],
+      "climax": ["Poem", "Language", "to read", "Tune"],
+      "resolution": ["to discuss", "this"]
+    },
+    "callbacks": [],
+    "absurdist": "The Police read a Poem so terrible it sends the burglar to Prison out of pure awkwardness."
+  },
+  {
+    "lesson": 16,
+    "title": "The Iron Burglar",
+    "saga": "Craft",
+    "hook": "A burglar with a style all his own decided to steal an entire city made of iron.",
+    "architecture": {
+      "opening": ["Style", "Test", "Halberd", "or", "Burglar"],
+      "rising": ["laden", "Iron", "lush", "to turn into", "City", "sincere"],
+      "conflict": ["Might (like mighty)", "to destroy", "everyone", "to reduce", "a List"],
+      "climax": ["War", "Coin", "shallow"],
+      "resolution": ["cheap"]
+    },
+    "callbacks": [],
+    "absurdist": "The Burglar tries to steal a City but it's too laden with Iron, so he just steals a cheap Coin instead."
+  },
+  {
+    "lesson": 17,
+    "title": "The Political Footstep",
+    "saga": "Journey",
+    "hook": "Politics is just a series of footsteps that lead nowhere correct.",
+    "architecture": {
+      "opening": ["to stop", "Footstep", "to ford", "repeatedly", "to agree"],
+      "rising": ["to look forward to", "Years of Age", "military", "Levy", "correct"],
+      "conflict": ["Politics", "to settle on", "to walk", "to transcend", "to surpass"],
+      "climax": ["to be", "Topic", "to build", "to prolong"],
+      "resolution": ["Nativity", "clear", "Foundation"]
+    },
+    "callbacks": [],
+    "absurdist": "The Military general tries to ford a river of Politics but steps on a Levy and falls in."
+  },
+  {
+    "lesson": 18,
+    "title": "The Day the Sky Wore Clothes",
+    "saga": "Elements",
+    "hook": "Someone had to dress the sky, and only one tailor was foolish enough to try.",
+    "architecture": {
+      "opening": ["Clothing", "inside", "Grief", "Yuan", "distant", "bad", "elementary", "Towel", "Cloth", "Hat", "Curtain", "Cotton"],
+      "rising": ["to help", "Market", "Lungs", "Sash", "stagnant", "Thorn", "System", "to manufacture", "to utter", "the Rain", "Cloud", "Thunder", "Electricity"],
+      "conflict": ["Frost", "Ice", "Winter", "Heavens", "to die young", "to pretend", "Bridge", "attractive", "standing up", "to weep", "Station", "Chapter", "to compete", "Sovereign", "Juvenile", "Bell"],
+      "climax": ["Salesman", "suitable", "Enemy", "Ancient Spoon", "North", "Back", "to compare", "Descendants", "to mix", "all", "this  [literary]", "somewhat", "it", "Purpose", "Grease", "every", "Small Plum", "Sea"],
+      "resolution": ["to beg", "to eat", "dry", "to duplicate", "Abdomen", "to lack", "to blow", "Song", "soft", "next", "Assets", "Looks", "to consult with"]
+    },
+    "callbacks": [],
+    "absurdist": "The Sky puts on a Hat made of Clouds and Thunder, but it's too tight and causes Rain."
+  },
+  {
+    "lesson": 19,
+    "title": "The Mirror of Absurdity",
+    "saga": "Spirit",
+    "hook": "The mirror didn't reflect faces; it reflected sounds and rhymes.",
+    "architecture": {
+      "opening": ["to compensate", "to cultivate", "Sound", "dark", "Rhyme", "Knowledge"],
+      "rising": ["Streamer", "unexpectedly", "Mirror", "Boundary", "deceased", "blind", "absurd"],
+      "conflict": ["to expect", "Direction", "to hinder", "to release", "to excite", "[all-purpose preposition]", "Side"],
+      "climax": ["to convert", "to undress", "to speak", "formerly", "to increase"],
+      "resolution": ["to make a present of", "East", "Building", "to freeze"]
+    },
+    "callbacks": [],
+    "absurdist": "The blind man looks into the Mirror and unexpectedly sees a Rhyme undressing."
+  },
+  {
+    "lesson": 20,
+    "title": "The Snake's Egg Breakfast",
+    "saga": "Nature",
+    "hook": "She went to the pond to find breakfast but found a serpent mocking her.",
+    "architecture": {
+      "opening": ["also", "she", "Ground", "Pond", "Insects", "Serpent", "Egg", "the Wind"],
+      "rising": ["to mock", "self", "to alter", "to remember", "already", "to wrap", "Bubbles", "to begin", "House"],
+      "conflict": ["Site", "Soup", "Sheep", "beautiful", "Ocean", "fresh", "to reach", "Appearance", "to fall short of"],
+      "climax": ["to gather", "to advance", "Standard", "who?", "to vend", "although", "reliable", "Noon"],
+      "resolution": ["to permit", "Feathers", "to learn", "to soar"]
+    },
+    "callbacks": [],
+    "absurdist": "The Serpent wraps a Sheep in Bubbles and tries to vend it as fresh Soup."
+  },
+  {
+    "lesson": 21,
+    "title": "The Factory of Forgetfulness",
+    "saga": "Craft",
+    "hook": "In a factory trapped inside a solid country, workers make trousers out of hemp and regret.",
+    "architecture": {
+      "opening": ["trapped", "solid", "Country", "round", "a Cause", "Park", "to return"],
+      "rising": ["to revolve", "Picture", "a Store", "Warehouse", "Trousers", "Factory", "Bed", "Hemp"],
+      "conflict": ["Heart", "to forget", "to endure", "to recognize", "Aspiration", "Annals", "to consider", "Idea", "to think"],
+      "climax": ["Breath", "to fear", "to feel", "a Regret", "worried", "to dread", "busy", "accustomed to"],
+      "resolution": ["to cherish", "certainly"]
+    },
+    "callbacks": [],
+    "absurdist": "The busy worker forgets his Trousers in the Warehouse and has to wear a Bed of Hemp."
+  },
+  {
+    "lesson": 22,
+    "title": "A Hand's Violent Day",
+    "saga": "Body",
+    "hook": "The hand woke up and chose violence, then love, then confusion.",
+    "architecture": {
+      "opening": ["Hand", "to look at", "to hold", "I", "Righteousness", "to deliberate", "Ant", "Ant", "to embrace", "to combat", "to criticize", "to beckon", "to strike", "Finger", "to support"],
+      "rising": ["to include", "to bring up", "to brandish", "to push", "to welcome", "to hang", "to press down on", "to drop", "to pull", "!!", "to look for", "to grind away", "to play with", "Nose", "Punishment", "mold"],
+      "conflict": ["Genius", "Riches", "to deposit", "at", "only then", "Milk", "to catch up with", "to inhale", "History", "even more", "hard (like material)", "again", "Friend", "Pair", "One of a Pair", "to protect", "to seize", "to observe"],
+      "climax": ["joyous", "to throw", "to not have", "to establish", "Thigh", "Offshoot", "Skill", "Branch", "(Paternal Older) Uncle", "Superintend", "lonely", "against", "Plank", "to go back", "Faction", "Blood Vessels", "a Claw", "to grab", "to pluck", "to pick", "Vegetable"],
+      "resolution": ["to accept", "to confer", "Love", "grand", "Platform", "to govern", "to commence", "to go", "Method", "until", "Room", "to arrive", "mutual", "sufficient", "Education", "to flow", "Comb"]
+    },
+    "callbacks": [],
+    "absurdist": "The Hand grabs a Vegetable and combs it with a Claw until it flows with Milk."
+  },
+  {
+    "lesson": 23,
+    "title": "The Secret Valley of Bathing",
+    "saga": "Nature",
+    "hook": "Deep in the mountain, there is a secret valley where bears go to bathe.",
+    "architecture": {
+      "opening": ["Mountain", "to exit", "to beat", "secret"],
+      "rising": ["to enter", "internal", "to holler", "Part", "impoverished"],
+      "conflict": ["public", "Pine Tree", "Valley", "to bathe"],
+      "climax": ["to desire", "the Lust", "to contain"],
+      "resolution": ["to dissolve"]
+    },
+    "callbacks": [],
+    "absurdist": "The impoverished Pine Tree desires a bath so much it dissolves into the Valley."
+  },
+  {
+    "lesson": 24,
+    "title": "The Old Woman's Political Party",
+    "saga": "Empire",
+    "hook": "An Old Woman started a political party based on quilts and malicious gossip.",
+    "architecture": {
+      "opening": ["to work as", "Files", "Political Party", "often", "Main Room", "Covering", "Waves", "Old Woman", "to break", "to break", "a Quilt"],
+      "rising": ["malicious", "to line up", "intense", "Death", "to inter", "Ear", "to take", "an Interest", "most", "Job", "holy", "brave", "strict"],
+      "conflict": ["drawn out", "slow", "to overflow", "a Ring", "to give back", "Husband", "Regulations", "to replace", "to lose", "Feudal Official", "to be about to", "worthy", "firm", "Power"],
+      "climax": ["another", "don't", "to turn", "Male", "Achievement", "Slave", "to toil", "to add", "to congratulate", "Shelf", "to cooperate", "Line Of Business", "Law", "to recover"],
+      "resolution": ["must", "to treat", "toward", "Morality", "to listen", "Hall", "tiny", "Street"]
+    },
+    "callbacks": [],
+    "absurdist": "The Feudal Official loses his Ear in a Quilt and enacts a Law against sleeping."
+  },
+  {
+    "lesson": 25,
+    "title": "The Committee of Rice and Riddles",
+    "saga": "Craft",
+    "hook": "The committee met in the autumn to discuss the serious business of perfume and riddles.",
+    "architecture": {
+      "opening": ["Standing Grain", "Journey", "Harmony", "to shift", "Autumn", "gloomy"],
+      "rising": ["a Profit", "Perfume", "Seasons", "Committee", "to entrust", "elegant", "to penetrate", "to entice"],
+      "conflict": ["Experience", "Rice", "lost", "Riddle", "the Kind", "Bamboo"],
+      "climax": ["to laugh", "Box", "Pen", "etc."],
+      "resolution": ["to calculate", "to answer", "Strategy"]
+    },
+    "callbacks": [],
+    "absurdist": "The Committee gets lost in a Box of Bamboo Rice and has to answer a Riddle to get out."
+  },
+  {
+    "lesson": 26,
+    "title": "The Prisoner's Furniture Store",
+    "saga": "Family",
+    "hook": "A prisoner escaped and opened a furniture store, but he only sold chairs to himself.",
+    "architecture": {
+      "opening": ["Person", "Prisoner", "Portion", "to occupy", "Furniture", "you", "you  [respectful]", "what?", "a Strip", "Value", "to make", "to do"],
+      "rising": ["however", "to dwell", "Position", "Piece", "still", "he", "to rest", "Faith", "to depend on", "Example", "individual", "healthy", "to halt", "upside down"],
+      "conflict": ["Benevolence", "excellent", "a Wound", "to safeguard", "Fort", "to pay", "Government Office", "to bow one's head", "to substitute for", "Bag", "to transform", "Flower", "Commodities", "whatwhichwhowherewhy?"],
+      "climax": ["convenient", "100 Chinese Inches", "to use", "long time", "Chinese Acre", "third", "a Handle", "Meat", "rotten", "Multitude", "to sit", "Seat", "to examine"],
+      "resolution": ["a Face", "to come", "Wheat", "to drink", "thirsty"]
+    },
+    "callbacks": [],
+    "absurdist": "The Prisoner eats rotten Meat from a Bag while sitting upside down on his Furniture."
+  },
+  {
+    "lesson": 27,
+    "title": "The Court of Night Liquids",
+    "saga": "Empire",
+    "hook": "In the Royal Court, they don't drink wine; they drink the liquid of the night.",
+    "architecture": {
+      "opening": ["to appoint", "Royal Court", "Court Of Law", "by means of"],
+      "rising": ["similar", "to combine", "to piece together", "Spine", "an Associate"],
+      "conflict": ["Glory", "Labor", "a Camp", "virtuous"],
+      "climax": ["Year", "Night", "Liquid"],
+      "resolution": ["to call out", "to exchange"]
+    },
+    "callbacks": [],
+    "absurdist": "The Associate tries to piece together his Spine using Night Liquid."
+  },
+  {
+    "lesson": 28,
+    "title": "The Corpse's Vacation",
+    "saga": "Journey",
+    "hook": "A corpse decided to go on a tour, but he forgot to pack his saw.",
+    "architecture": {
+      "opening": ["to travel", "to execute", "to go swimming", "to tour", "not"],
+      "rising": ["suddenly", "Thing", "easy", "to grant", "Corpse"],
+      "conflict": ["Nun", "Woolen Cloth", "Mud", "Habitation", "to grip"],
+      "climax": ["to reside", "a Saw", "Story", "Bureau"],
+      "resolution": ["Door", "Domicile", "to hire", "to look back"]
+    },
+    "callbacks": [],
+    "absurdist": "The Corpse goes swimming in Mud wearing Woolen Cloth and hires a Nun to wash him."
+  },
+  {
+    "lesson": 29,
+    "title": "The God of Oil and Fruit",
+    "saga": "Spirit",
+    "hook": "The gods demanded a sacrifice, but all we had was oil and fruit.",
+    "architecture": {
+      "opening": ["to show", "Society", "to inspect", "Happiness", "to prohibit"],
+      "rising": ["Front of a Garment", "Religion", "to worship", "to offer sacrifice", "to scrutinize", "to scrub"],
+      "conflict": ["Wherefore", "to draw out", "to draw out", "Oil", "first", "to pawn"],
+      "climax": ["to express", "to extend", "Gods", "Fruit"],
+      "resolution": ["Lesson", "Granule"]
+    },
+    "callbacks": [],
+    "absurdist": "The Priest scrubs the Front of his Garment with Oil to worship the Fruit God."
+  },
+  {
+    "lesson": 30,
+    "title": "The Sugar War",
+    "saga": "Empire",
+    "hook": "The Monarch declared war on everything that wasn't made of sugar.",
+    "architecture": {
+      "opening": ["a Catty  [unit of wgt]", "a Place", "near", "hew", "temporary", "gradually", "Quality", "to reprimand"],
+      "rising": ["to accuse", "for the first time", "how?", "Yesterday", "to do", "the Snow", "anxious", "to seek", "Married Woman", "to sweep"],
+      "conflict": ["to record", "commonplace", "to contend", "clean", "Matter", "Tang", "Sugar", "hale", "Overseer", "Queen Elizabeth", "Monarch"],
+      "climax": ["Skirt", "Crowd", "and", "to need", "Confucian", "auspicious", "upright", "bent"],
+      "resolution": ["Big Dipper", "Material", "Academic Discipline", "to utilize"]
+    },
+    "callbacks": [],
+    "absurdist": "Queen Elizabeth wears a Skirt made of Sugar and sweeps the Snow with a Big Dipper."
+  },
+  {
+    "lesson": 31,
+    "title": "The Fat General's Makeup",
+    "saga": "Empire",
+    "hook": "The General was robust, but he needed a lot of makeup to hide his mistakes.",
+    "architecture": {
+      "opening": ["Times Past", "to borrow", "mistaken", "scattered", "to scatter", "to prepare", "twenty"],
+      "rising": ["mat", "Degrees", "Ferry", "Half", "Partner", "fat", "to judge", "Dependents"],
+      "conflict": ["Boxing", "Victory", "a Slice", "Printing Plate", "to put on makeup", "robust", "hamlet", "Attire"],
+      "climax": ["a General  [Rank]", "of", "weary", "to blink", "no"],
+      "resolution": ["to negate", "Cup"]
+    },
+    "callbacks": [],
+    "absurdist": "The Fat General puts on Makeup to look like a robust Hamlet but just looks like a weary Cup."
+  },
+  {
+    "lesson": 32,
+    "title": "The Wisdom of the Dart",
+    "saga": "Empire",
+    "hook": "The tribe didn't use spears; they used wisdom and very sharp darts.",
+    "architecture": {
+      "opening": ["Dart", "Tribe", "to know", "Wisdom", "Spear", "gentle", "to knead"],
+      "rising": ["Tasks", "Fog", "to bestow", "Preface", "beforehand", "wild", "Class"],
+      "conflict": ["a Bow  [for Arrows]", "to draw", "strong", "weak", "Bullet"],
+      "climax": ["Buddha", "Expense", "Younger Brother", "No#  [number]"],
+      "resolution": ["adroit"]
+    },
+    "callbacks": [],
+    "absurdist": "The Younger Brother tries to shoot a Bullet with a Bow but hits the Buddha instead."
+  },
+  {
+    "lesson": 33,
+    "title": "The Pig Teacher",
+    "saga": "Education",
+    "hook": "The teacher was a pig, but he taught the most important lesson of all: how to roast.",
+    "architecture": {
+      "opening": ["somebody", "to shoot", "to thank", "Old Man", "to take an exam", "to roast"],
+      "rising": ["Filial Piety", "to teach", "someone", "—ing", "Pig", "to chase"],
+      "conflict": ["Commander", "Teacher", "Lion", "Bureaucrat", "Pipe", "Father"],
+      "climax": ["to mingle", "Effect", "relatively", "School", "Lower Leg", "to run", "to jump"],
+      "resolution": ["Path", "Dew", "Skeleton", "slippery", "to cross"]
+    },
+    "callbacks": [],
+    "absurdist": "The Pig Teacher chases a Lion around the School until they both slip on a Skeleton."
+  },
+  {
+    "lesson": 34,
+    "title": "Apollo's Hole",
+    "saga": "Space",
+    "hook": "Apollo didn't want to go to the moon; he wanted to go into a perilous hole.",
+    "architecture": {
+      "opening": ["Apollo", "aah!", "Occasion", "perilous", "as you wish", "Yang"],
+      "rising": ["to exhibit", "to ward off", "to attach", "Inst.", "Battle Formation", "Team"],
+      "conflict": ["to descend", "Stairs", "Hole", "Research", "abruptly"],
+      "climax": ["empty", "to control", "Border", "deep", "a Spy"],
+      "resolution": ["Hill", "Troops"]
+    },
+    "callbacks": [],
+    "absurdist": "Apollo falls abruptly into a deep Hole and finds a Spy researching empty stairs."
+  },
+  {
+    "lesson": 35,
+    "title": "The Spider's Red Web",
+    "saga": "Craft",
+    "hook": "The spider spun a web not of silk, but of red medicine and machines.",
+    "architecture": {
+      "opening": ["Silk", "Line", "to maintain", "Silk Gauze", "to continue", "continuum", "to give"],
+      "rising": ["to tie", "end", "a Rank", "Epoch", "red", "to make an appointment", "fine", "tight"],
+      "conflict": ["to weave", "Net", "green", "curved", "Bay", "to be enamored of", "to change"],
+      "climax": ["Scripture", "lightweight", "behind", "how many?", "Machine", "to sever", "to carry on"],
+      "resolution": ["obvious", "Music", "Medicine", "Chicken", "[interrogative suffix]; [pause marker]", "Lineage", "related to", "Grandchild"]
+    },
+    "callbacks": [],
+    "absurdist": "The Chicken weaves a Net of Green Silk to catch a Machine that dispenses Medicine."
+  },
+  {
+    "lesson": 36,
+    "title": "The Frozen Collar",
+    "saga": "Elements",
+    "hook": "It was so cold that his collar froze to his neck, and his fate was sealed.",
+    "architecture": {
+      "opening": ["to withdraw (retreat, not banks)", "Foot", "Apparel", "Fate", "to stay"],
+      "rising": ["to slide", "to chat", "Willow", "Orders", "cold", "zero"],
+      "conflict": ["Collar", "to communicate", "courageous", "Criminal", "Danger"],
+      "climax": ["fragile", "Print", "Ind.", "Excitement"],
+      "resolution": ["Excitement"]
+    },
+    "callbacks": [],
+    "absurdist": "The Criminal slides on zero degrees ice and his Collar freezes to a Willow tree."
+  },
+  {
+    "lesson": 37,
+    "title": "The Drunken Drummer",
+    "saga": "Empire",
+    "hook": "The Chieftain drank too much liquor and decided to play the drums with his head.",
+    "architecture": {
+      "opening": ["Liquor", "to distribute", "Chieftain", "to venerate", "to abide by", "Beans", "Head", "short"],
+      "rising": ["Ceremony", "Body", "a Drum", "joyful", "Kitchen", "Timber", "Blood", "exhausted", "to the utmost"],
+      "conflict": ["Lid", "temperature", "to supervise", "Basket", "blue", "Silver", "Heel", "very", "Root", "immediately"],
+      "climax": ["Holiday", "to retreat", "Leg", "Limit", "Eyelet", "high-quality", "Breakers", "Mom"],
+      "resolution": ["Food", "Meal", "to dine", "Bldg.", "to raise", "since", "approximate"]
+    },
+    "callbacks": [],
+    "absurdist": "Mom gets drunk on Liquor and plays the Drum with a Silver Heel while eating Beans."
+  },
+  {
+    "lesson": 38,
+    "title": "The Spicy Vendor",
+    "saga": "Craft",
+    "hook": "The vendor sold spicy hammer soup, and he was very diligent about it.",
+    "architecture": {
+      "opening": ["even", "to evaluate", "Level Ground", "ooh!", "to shout", "to hope", "scarce", "to study", "Senses", "to stir"],
+      "rising": ["sinister", "cruel", "Bosom", "to leave", "Fowl", "peppery", "to manage", "to dispute", "Partition", "to evade"],
+      "conflict": ["new", "Fuel", "Relatives", "Inner Garments", "Good Fortune", "to clench", "Newspaper", "to call", "to receive", "Land", "Force", "Heat"],
+      "climax": ["Technique", "Sign Of The Hog", "Nucleus", "Tot", "to carve", "should", "to narrate", "Art", "to kill", "to aid", "to yield"],
+      "resolution": ["Territory", "frigid", "Competition"]
+    },
+    "callbacks": [],
+    "absurdist": "The Tot carves a Nucleus out of a Spicy Fowl using a Hammer while shouting 'Ooh!'."
+  },
+  {
+    "lesson": 39,
+    "title": "The Poisonous Spring",
+    "saga": "Nature",
+    "hook": "In the spring, the flowers don't bloom; they just release refined poison.",
+    "architecture": {
+      "opening": ["a Poison", "Vegetarian Diet", "blue or green", "refined", "to invite", "Feelings", "Eyeball"],
+      "rising": ["pure", "quiet", "Responsibility", "Accomplishments", "to accumulate", "Surface", "a Watch", "Life"],
+      "conflict": ["Star", "Surname", "Sex", "Harm", "to cut off", "intelligent", "plentiful", "Springtime"],
+      "climax": ["tranquil", "to proffer", "Cudgel", "diligent", "careful", "merely", "Han", "difficult"],
+      "resolution": ["Vendor's Stand", "Splendor", "Clamor", "to droop", "Hammer", "to sleep"]
+    },
+    "callbacks": [],
+    "absurdist": "The Diligent Vendor hits his own Eyeball with a Cudgel and falls asleep at his Stand."
+  },
+  {
+    "lesson": 40,
+    "title": "The Cowboy's Ticket to the West",
+    "saga": "Journey",
+    "hook": "He wanted to go West, but he only had a ticket for the South.",
+    "architecture": {
+      "opening": ["now", "to harbor", "to miss", "Yin", "shady"],
+      "rising": ["West", "want", "Waist", "Ticket"],
+      "conflict": ["to drift", "a Mark", "Merchant", "Price"],
+      "climax": ["the Smoke", "South"],
+      "resolution": ["South"]
+    },
+    "callbacks": [],
+    "absurdist": "The Merchant drifts West on a cloud of Smoke because he missed the Ticket price."
+  },
+  {
+    "lesson": 41,
+    "title": "The Gun in the Storehouse",
+    "saga": "Empire",
+    "hook": "They opened the storehouse to find not grain, but a gun and a marquis.",
+    "architecture": {
+      "opening": ["Gate", "[plural]", "Leisure", "to ask", "Interval", "simple"],
+      "rising": ["to open", "to hear", "Storehouse", "Gun", "to initiate", "non—", "Row"],
+      "conflict": ["Guilt", "to lean on", "Marquis", "to wait", "to decide", "fast", "Chopsticks"],
+      "climax": ["Tanned Hide", "to surround", "great", "to defend"],
+      "resolution": ["to defend"]
+    },
+    "callbacks": [],
+    "absurdist": "The Marquis uses Chopsticks to defend the Gun from a Tanned Hide."
+  },
+  {
+    "lesson": 42,
+    "title": "The Spicy Trunk",
+    "saga": "Nature",
+    "hook": "The tree trunk was so spicy that even the drought couldn't dry it out.",
+    "architecture": {
+      "opening": ["to offend", "Shore", "Trunk (like a tree)", "Drought", "to hurry"],
+      "rising": ["Yu", "Eaves", "moi", "Excess", "to eliminate", "Route"],
+      "conflict": ["to bundle up", "quick", "spicy hot", "entire", "to practice", "to opt for"],
+      "climax": ["heavy", "to understand", "to move", "Species"],
+      "resolution": ["to collide"]
+    },
+    "callbacks": [],
+    "absurdist": "Yu hurries to bundle up the Spicy Trunk but collides with a Heavy Species of ant."
+  },
+  {
+    "lesson": 43,
+    "title": "The Insane Physician",
+    "saga": "Body",
+    "hook": "The physician wasn't here to cure illness; he was here to cause pain.",
+    "architecture": {
+      "opening": ["Illness", "to ache", "insane", "to match", "Region"],
+      "rising": ["Hub", "Europe", "Physician", "to look up to", "to greet"],
+      "conflict": ["to ascend", "Lamp", "Evidence"],
+      "climax": ["to send out", "to discard"],
+      "resolution": ["to discard"]
+    },
+    "callbacks": [],
+    "absurdist": "The Insane Physician treats an Ache by sending out a Lamp to Europe."
+  },
+  {
+    "lesson": 44,
+    "title": "The Shadow Puppets of England",
+    "saga": "Craft",
+    "hook": "In England, the shadows don't follow you; they tumble and wrestle.",
+    "architecture": {
+      "opening": ["Shape", "Shadow", "Hue", "to have to", "rare"],
+      "rising": ["to participate", "wretched", "to repair", "Literature", "Mosquito", "erudite", "Countenance"],
+      "conflict": ["Products", "a Rate", "to tumble", "Center", "England", "Crust", "to grasp", "Papa"],
+      "climax": ["Bar", "Color", "to discontinue"],
+      "resolution": ["to discontinue"]
+    },
+    "callbacks": [],
+    "absurdist": "Papa grasps a Mosquito in the Center of England and repairs it with Literature."
+  },
+  {
+    "lesson": 45,
+    "title": "The Sweet Dance of Nothing",
+    "saga": "Spirit",
+    "hook": "The dance was sweet, but the partner was nothing but a ghost.",
+    "architecture": {
+      "opening": ["sweet", "such and such", "his-hers-its-theirs", "Period of Time"],
+      "rising": ["Base", "Sphinx", "tremendously", "expensive", "to bequeath"],
+      "conflict": ["Dance", "nothing", "to comfort", "moreover"],
+      "climax": ["Older Sister", "Group", "Ancestor"],
+      "resolution": ["to assist"]
+    },
+    "callbacks": [],
+    "absurdist": "The Sphinx tries to Comfort the Ancestor with a Sweet Dance but trips over the Base."
+  },
+  {
+    "lesson": 46,
+    "title": "The Universal Port",
+    "saga": "Empire",
+    "hook": "The port was open to everyone, provided they chose the right lane.",
+    "architecture": {
+      "opening": ["side by side", "universal", "Profession"],
+      "rising": ["that's right", "together", "Supply", "to supply"],
+      "conflict": ["different", "Lane", "Port"],
+      "climax": ["to choose"],
+      "resolution": ["to choose"]
+    },
+    "callbacks": [],
+    "absurdist": "The workers stand side by side in the Port to choose a different Lane for their Profession."
+  },
+  {
+    "lesson": 47,
+    "title": "The Well of Evil Angles",
+    "saga": "Genesis",
+    "hook": "The well didn't hold water; it held evil angles and flat wheels.",
+    "architecture": {
+      "opening": ["a Well", "Asia", "Evil", "Angle"],
+      "rising": ["to untie", "Orifice", "once more", "to weigh", "to lecture"],
+      "conflict": ["to frame", "flat", "Piece of Writing", "to compile"],
+      "climax": ["Theory", "Wheel", "Canon"],
+      "resolution": ["Canon"]
+    },
+    "callbacks": [],
+    "absurdist": "The Evil Angle tries to untie the Wheel but gets flattened by a heavy Canon."
+  },
+  {
+    "lesson": 48,
+    "title": "The Paper Marriage",
+    "saga": "Family",
+    "hook": "Their marriage was only on paper, and the paper was made of dusk.",
+    "architecture": {
+      "opening": ["Family Name", "Paper", "Dusk", "Marriage"],
+      "rising": ["low", "Bottom", "People", "the Slumber", "Fu3"],
+      "conflict": ["to patch", "knowledgeable", "to wrestle", "Metropolis"],
+      "climax": ["Department", "Young Man", "Countryside"],
+      "resolution": ["an Echo"]
+    },
+    "callbacks": [],
+    "absurdist": "The Young Man wrestles a Metropolis made of Paper until it collapses into an Echo."
+  },
+  {
+    "lesson": 49,
+    "title": "The Boat of Illusions",
+    "saga": "Journey",
+    "hook": "The boat wasn't real; it was a forged illusion floating on words.",
+    "architecture": {
+      "opening": ["Section", "to forge", "unreal", "to take charge of"],
+      "rising": ["Word", "Boat", "Ship", "the Sort"],
+      "conflict": ["Tray", "to relocate", "to move"],
+      "climax": ["Melon", "Orphan"],
+      "resolution": ["Orphan"]
+    },
+    "callbacks": [],
+    "absurdist": "The Orphan relocates a Melon on a Boat but realizes the boat is just a forged Word."
+  },
+  {
+    "lesson": 50,
+    "title": "The Shrimp's Vacation",
+    "saga": "Nature",
+    "hook": "Even shrimp need a vacation, preferably one with shoes and steam.",
+    "architecture": {
+      "opening": ["a Benefit", "Vacation", "Shrimp", "Air", "Vapor"],
+      "rising": ["to fly", "face-to-face", "Noodles", "Leather"],
+      "conflict": ["Shoes", "fragrant", "Voice", "Wu"],
+      "climax": ["Amusement", "Error", "to undertake （not like a cemetery）"],
+      "resolution": ["to steam"]
+    },
+    "callbacks": [],
+    "absurdist": "The Shrimp wears Leather Shoes to fly face-to-face with a bowl of steaming Noodles."
+  },
+  {
+    "lesson": 51,
+    "title": "The Fur House",
+    "saga": "Craft",
+    "hook": "The house was made entirely of fur, which made the broadcasting very muffled.",
+    "architecture": {
+      "opening": ["Tooth", "to pass through", "wow!", "to explain", "a Try"],
+      "rising": ["to turn over", "to broadcast", "Fur", "Tail", "a Dwelling"],
+      "conflict": ["to entrust", "to act", "bogus", "long", "to stretch"],
+      "climax": ["to swell", "a Cover", "Hair of the Head", "to unfold"],
+      "resolution": ["Funeral"]
+    },
+    "callbacks": [],
+    "absurdist": "The Fur Dwelling swells up like a balloon and floats away during a Funeral."
+  },
+  {
+    "lesson": 52,
+    "title": "The Hawk and the Rabbit",
+    "saga": "Nature",
+    "hook": "The hawk met a rabbit on an island, and they discussed the concept of ten thousand.",
+    "architecture": {
+      "opening": ["Wild Goose", "ought to", "Bird", "Hawk", "Duck"],
+      "rising": ["Island", "to encounter", "ten thousand", "to stride", "Ridge of a Hill"],
+      "conflict": ["just now", "deficient", "Treasure", "remote", "to shake"],
+      "climax": ["Rabbit", "to flee", "to avoid", "Nightfall"],
+      "resolution": ["Elephant", "Likeness"]
+    },
+    "callbacks": [],
+    "absurdist": "The Rabbit rides an Elephant to avoid the Hawk but gets stuck on a Ridge of a Hill."
+  },
+  {
+    "lesson": 53,
+    "title": "The Mama Tiger's Drama",
+    "saga": "Family",
+    "hook": "Mama was a tiger, and she loved drama almost as much as she loved scolding.",
+    "architecture": {
+      "opening": ["Horse", "Mama", "to scold", "yes or no", "to check"],
+      "rising": ["to ride", "startled", "Tiger", "to ponder", "Location"],
+      "conflict": ["to frolic", "Drama", "Certificate", "Deer", "Dust"],
+      "climax": ["lovely", "Bear", "Ability"],
+      "resolution": ["Attitude"]
+    },
+    "callbacks": [],
+    "absurdist": "Mama rides a Tiger into a pile of Dust to check if the Deer has a Drama Certificate."
+  },
+  {
+    "lesson": 54,
+    "title": "The Dragon's Morning Farm",
+    "saga": "Nature",
+    "hook": "The dragon didn't breathe fire; he farmed lumps of concentrated magic in the morning.",
+    "architecture": {
+      "opening": ["Sign Of The Tiger", "to perform", "Sign Of The Dragon", "Morning"],
+      "rising": ["Agriculture", "concentrated", "to deliver", "Ghost"],
+      "conflict": ["Demon", "Lump", "Dragon"],
+      "climax": ["to raid"],
+      "resolution": ["to raid"]
+    },
+    "callbacks": [],
+    "absurdist": "The Dragon delivers a concentrated Lump of Ghost farming to the Morning market."
+  },
+  {
+    "lesson": 55,
+    "title": "The Youngster and the Chaos Dragon",
+    "saga": "Genesis",
+    "hook": "A youngster wrote a spell so old and false that it opened a window to pure chaos.",
+    "architecture": {
+      "opening": ["Youngster", "old", "to write", "Diarrhea", "dos", "Duo", "full", "you  [literary]"],
+      "rising": ["to fill", "false", "to unite", "to shut", "that", "which?", "Witch", "Spirit", "County", "to suspend", "to offer", "to lift up"],
+      "conflict": ["Brain", "Annoyed", "Specialty", "to spread", "to rotate", "Troupe", "yellow", "extensive", "horizontal", "Window", "general", "verbose", "to assume"],
+      "climax": ["Number", "Multistory Building", "alone", "to belong to", "spoiled", "Orchid", "to follow", "vertical", "identical", "to relieve", "Clown", "to twist"],
+      "resolution": ["lowly", "a Brand (Trademark)", "Appellation", "peculiar", "crimson", "likewise", "Extreme", "miscellaneous", "sayeth", "Chaos"]
+    },
+    "callbacks": ["Brain from Lesson 55 recalls Head from Lesson 37"],
+    "absurdist": "The Clown twists a Multistory Building into a vertical Orchid to relieve his Diarrhea."
+  }
+]
