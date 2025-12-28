@@ -1,32 +1,115 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { useState, useEffect, useCallback, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { StoryProvider, useStory, Paragraph, Choices } from '@/components/Ink';
 import { CaseFile } from '@/components/Bureau/CaseFile';
 import { Spirit } from '@/components/Character/Spirit';
 import { useGameStore } from '@/stores/gameStore';
+import { cn } from '@/lib/cn';
 
 // Import the compiled Ink story JSON
-// For now, we'll use a placeholder until we compile the real story
 import lesson01Story from '@/ink/lessons/lesson01.ink.json';
 
-function GameContent() {
-  const { paragraphs, choices, canContinue, continueStory, isLoading, error } = useStory();
-  const { bindCharacter, isCharacterBound } = useGameStore();
+// Screen shake wrapper component
+function ScreenShakeWrapper({
+  children,
+  shake
+}: {
+  children: React.ReactNode;
+  shake: boolean;
+}) {
+  return (
+    <motion.div
+      animate={shake ? {
+        x: [0, -4, 4, -3, 3, -2, 2, 0],
+        rotate: [0, -0.5, 0.5, -0.3, 0.3, 0]
+      } : {}}
+      transition={{ duration: 0.5 }}
+    >
+      {children}
+    </motion.div>
+  );
+}
 
-  // Track current character being displayed (extracted from Ink variables or tags)
+function GameContent() {
+  const { paragraphs, choices, canContinue, continueStory, isLoading, error, getVariable } = useStory();
+  const { bindCharacter, isCharacterBound } = useGameStore();
+  const [screenShake, setScreenShake] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Extract current character from Ink tags in paragraphs
   const [currentCharacter, setCurrentCharacter] = useState<{
     character: string;
     pinyin: string;
     meaning: string;
   } | null>(null);
 
+  // Parse character info from tags in the story
+  useEffect(() => {
+    // Look for character tags in recent paragraphs
+    const recentParagraphs = paragraphs.slice(-5);
+    let charInfo: typeof currentCharacter = null;
+
+    for (const p of recentParagraphs) {
+      const charMatch = p.match(/# CHAR: (.+)/);
+      const pinyinMatch = p.match(/# PINYIN: (.+)/);
+      const meaningMatch = p.match(/# MEANING: (.+)/);
+
+      if (charMatch) {
+        charInfo = {
+          character: charMatch[1],
+          pinyin: pinyinMatch?.[1] || '',
+          meaning: meaningMatch?.[1] || ''
+        };
+      }
+    }
+
+    setCurrentCharacter(charInfo);
+  }, [paragraphs]);
+
+  // Trigger screen shake for dramatic moments
+  const triggerShake = useCallback(() => {
+    setScreenShake(true);
+    setTimeout(() => setScreenShake(false), 500);
+  }, []);
+
+  // Handle binding animation
+  const handleBind = useCallback(() => {
+    triggerShake();
+    if (currentCharacter) {
+      bindCharacter({
+        id: Date.now(),
+        character: currentCharacter.character,
+        pinyin: currentCharacter.pinyin,
+        meaning: currentCharacter.meaning,
+        lessonId: 1
+      });
+    }
+  }, [currentCharacter, bindCharacter, triggerShake]);
+
+  // Auto-scroll to bottom when content changes
+  useEffect(() => {
+    if (containerRef.current) {
+      containerRef.current.scrollTo({
+        top: containerRef.current.scrollHeight,
+        behavior: 'smooth'
+      });
+    }
+  }, [paragraphs]);
+
   if (isLoading) {
     return (
       <div className="flex items-center justify-center min-h-[50vh]">
-        <p className="text-ink-faded font-ui">Loading case file...</p>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: [0.3, 1, 0.3] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          className="text-ink-faded font-ui"
+        >
+          Loading case file...
+        </motion.p>
       </div>
     );
   }
@@ -39,61 +122,104 @@ function GameContent() {
     );
   }
 
+  // Filter out tag-only paragraphs from display
+  const displayParagraphs = paragraphs.filter(p => !p.startsWith('#'));
+
   return (
-    <div className="space-y-6">
-      {/* Story paragraphs */}
-      <div className="prose prose-invert max-w-none">
-        {paragraphs.map((text, index) => (
-          <Paragraph key={index} text={text} index={index} />
-        ))}
+    <ScreenShakeWrapper shake={screenShake}>
+      <div ref={containerRef} className="space-y-6 max-h-[70vh] overflow-y-auto pr-2 scrollbar-thin">
+        {/* Story paragraphs */}
+        <div className="prose prose-invert max-w-none">
+          <AnimatePresence mode="popLayout">
+            {displayParagraphs.map((text, index) => (
+              <Paragraph
+                key={`p-${index}-${text.substring(0, 20)}`}
+                text={text}
+                index={index}
+                typewriter={index === displayParagraphs.length - 1 && displayParagraphs.length <= 5}
+              />
+            ))}
+          </AnimatePresence>
+        </div>
+
+        {/* Current character display (if any) */}
+        <AnimatePresence>
+          {currentCharacter && (
+            <motion.div
+              key={currentCharacter.character}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              transition={{ duration: 0.6 }}
+            >
+              <Spirit
+                character={currentCharacter.character}
+                pinyin={currentCharacter.pinyin}
+                meaning={currentCharacter.meaning}
+                isBound={isCharacterBound(currentCharacter.character)}
+                showInfo
+                onBind={handleBind}
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Choices */}
+        <Choices />
+
+        {/* Continue button (when story can continue but no choices) */}
+        <AnimatePresence>
+          {canContinue && choices.length === 0 && (
+            <motion.button
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ delay: 0.5, duration: 0.3 }}
+              onClick={continueStory}
+              whileHover={{ x: 4 }}
+              whileTap={{ scale: 0.98 }}
+              className="choice-button mt-6 text-center w-full"
+            >
+              <span className="text-ink-faded mr-2">▸</span>
+              Continue
+            </motion.button>
+          )}
+        </AnimatePresence>
+
+        {/* End of story */}
+        <AnimatePresence>
+          {!canContinue && choices.length === 0 && paragraphs.length > 0 && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.5 }}
+              className="text-center mt-12 pt-8 border-t border-ink-faded/20"
+            >
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.8 }}
+                className="text-ink-faded font-ui text-sm mb-6"
+              >
+                案件已結 — Case Closed
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 1.2, type: 'spring' }}
+              >
+                <Link href="/">
+                  <button className="choice-button inline-block px-8">
+                    Return to Bureau
+                  </button>
+                </Link>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
-
-      {/* Current character display (if any) */}
-      {currentCharacter && (
-        <Spirit
-          character={currentCharacter.character}
-          pinyin={currentCharacter.pinyin}
-          meaning={currentCharacter.meaning}
-          isBound={isCharacterBound(currentCharacter.character)}
-          showInfo
-        />
-      )}
-
-      {/* Choices */}
-      <Choices />
-
-      {/* Continue button (when story can continue but no choices) */}
-      {canContinue && choices.length === 0 && (
-        <motion.button
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-          onClick={continueStory}
-          className="choice-button mt-6 text-center"
-        >
-          <span className="text-ink-faded">▸</span> Continue
-        </motion.button>
-      )}
-
-      {/* End of story */}
-      {!canContinue && choices.length === 0 && paragraphs.length > 0 && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-          className="text-center mt-8 pt-8 border-t border-ink-faded/20"
-        >
-          <p className="text-ink-faded font-ui text-sm mb-4">
-            案件已結 — Case Closed
-          </p>
-          <Link href="/">
-            <button className="choice-button inline-block">
-              Return to Bureau
-            </button>
-          </Link>
-        </motion.div>
-      )}
-    </div>
+    </ScreenShakeWrapper>
   );
 }
 
@@ -107,7 +233,15 @@ export default function GamePage() {
   if (!mounted) {
     return (
       <div className="flex items-center justify-center min-h-screen">
-        <p className="text-ink-faded font-ui">Initializing...</p>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          <p className="text-ink-faded font-ui text-lg">
+            Initializing case file...
+          </p>
+        </motion.div>
       </div>
     );
   }
@@ -115,25 +249,44 @@ export default function GamePage() {
   return (
     <main className="min-h-screen p-4 md:p-8">
       {/* Header */}
-      <header className="max-w-3xl mx-auto mb-8">
+      <motion.header
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="max-w-3xl mx-auto mb-8"
+      >
         <Link
           href="/"
-          className="inline-flex items-center text-ink-faded hover:text-ink transition-colors font-ui text-sm"
+          className="inline-flex items-center text-ink-faded hover:text-ink transition-colors font-ui text-sm group"
         >
-          ← Bureau Lobby
+          <motion.span
+            className="mr-1"
+            whileHover={{ x: -4 }}
+          >
+            ←
+          </motion.span>
+          <span className="group-hover:text-spirit-glow transition-colors">
+            Bureau Lobby
+          </span>
         </Link>
-      </header>
+      </motion.header>
 
       {/* Game content */}
-      <StoryProvider initialStory={lesson01Story}>
-        <CaseFile
-          caseNumber="001"
-          title="The Mouth That Counted the Universe"
-          division="Genesis Division"
-        >
-          <GameContent />
-        </CaseFile>
-      </StoryProvider>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        <StoryProvider initialStory={lesson01Story}>
+          <CaseFile
+            caseNumber="001"
+            title="The Mouth That Counted the Universe"
+            division="Genesis Division"
+          >
+            <GameContent />
+          </CaseFile>
+        </StoryProvider>
+      </motion.div>
     </main>
   );
 }
