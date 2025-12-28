@@ -5,6 +5,8 @@
 VAR bound_count = 0
 VAR current_char = ""
 
+-> start
+
 === start ===
 The file lands on your desk with a sound like distant thunder.
 
@@ -14,8 +16,8 @@ You are new to the Ministry. The intake clerk barely glanced at you before stamp
 
 The file is warm to the touch. The label reads:
 
-*案件 #001: 創世紀事*
-*Genesis Incident*
+_案件 #001: 創世紀事_
+_Genesis Incident_
 
 + [Open the file]
     -> open_file
@@ -27,7 +29,7 @@ The file is older than it should be. The edges are worn, the paper yellowed, tho
 
 Someone has written in the margin, in faded ink:
 
-*"In the beginning, there was nothing but a single horizontal line."*
+_"In the beginning, there was nothing but a single horizontal line."_
 
 The words seem to glow faintly.
 
@@ -54,7 +56,7 @@ It is utterly, impossibly *alone*.
 
 The line speaks without a mouth.
 
-{char:一}
+【一】
 
 "I am *ONE*," it says, and its voice sounds like the first note ever sung. "I was here before counting existed. I *made* counting exist."
 
@@ -91,7 +93,7 @@ The spirit shudders. It *recognizes itself* in your voice.
 
 A warmth spreads through your chest. The character settles into your mind — a single proud line, singing its eternal note.
 
-*一 = one = yī*
+_一 = one = yī_
 
 The void shifts. The loneliness of ONE has been heard. And now, as if in response—
 
@@ -104,7 +106,7 @@ Another line appears.
 # PINYIN: èr
 # MEANING: two
 
-{char:二}
+【二】
 
 Two parallel lines float in the darkness. They stack up, one above the other, like steps leading somewhere.
 
@@ -136,7 +138,7 @@ The fourth tone. Sharp and falling, like a declaration.
 
 The TWO spirits calm. They recognize their name. They settle into your memory — two lines, stacked, no longer arguing.
 
-*二 = two = èr*
+_二 = two = èr_
 
 But if two can exist... why not more?
 
@@ -149,13 +151,13 @@ A third line materializes.
 # PINYIN: sān
 # MEANING: three
 
-{char:三}
+【三】
 
 Three horizontal lines rise like stairs, like a ladder into possibility.
 
 They sing together: *"Saaaan-shine!"* — the word stretching upward, harmonious, complete.
 
-{char:三}
+【三】
 
 "We are *THREE*," they chorus. "We are crowd. We are the first song with harmony."
 
@@ -172,7 +174,7 @@ First tone. High and steady, like the top step of a stair.
 
 The THREE spirits align. They hum in perfect thirds. They become memory.
 
-*三 = three = sān*
+_三 = three = sān_
 
 The void is no longer empty. Numbers are being born. And now—
 
@@ -185,11 +187,11 @@ Something *encloses*.
 # PINYIN: sì
 # MEANING: four
 
-{char:四}
+【四】
 
 A box forms in the darkness. Inside it, shapes move — the first container, the first boundary.
 
-*"Sì!"* — the sound is sharp, commanding. "See this! See what is *contained*!"
+"Sì!"* — the sound is sharp, commanding. "See this! See what is *contained*!"
 
 "We are *FOUR*," the box declares. "We are the first room. The first limit. The first *inside*."
 
@@ -206,7 +208,7 @@ Fourth tone. Sharp and final, like a door closing.
 
 The FOUR spirit settles. The first box. The first boundary. Yours now.
 
-*四 = four = sì*
+_四 = four = sì_
 
 Inside the box, something crosses.
 
@@ -217,11 +219,11 @@ Inside the box, something crosses.
 # PINYIN: wǔ
 # MEANING: five
 
-{char:五}
+【五】
 
 Five strokes converge at a crossing point — a meeting place at the center of everything.
 
-*"Woo!"* it calls, a sound that rises and falls like a question answered.
+"Woo!"* it calls, a sound that rises and falls like a question answered.
 
 "I am *FIVE*," says the crossing. "I am the center. I am where the lines meet. I am *balance*."
 
@@ -238,7 +240,7 @@ Third tone. The dipping tone. Down and up, like finding your footing.
 
 The FIVE spirit centers itself in your mind. The crossroads. The meeting point.
 
-*五 = five = wǔ*
+_五 = five = wǔ_
 
 Something covers the eight that hasn't arrived yet—
 
@@ -249,11 +251,11 @@ Something covers the eight that hasn't arrived yet—
 # PINYIN: liù
 # MEANING: six
 
-{char:六}
+【六】
 
 A lid descends over diverging paths. Eight hides beneath, but six appears above.
 
-*"Leo!"* it shouts — for six sharp reasons that defy explanation.
+"Leo!"* it shouts — for six sharp reasons that defy explanation.
 
 "I am *SIX*," says the covered thing. "I am what happens when you put a roof over chaos."
 
@@ -270,7 +272,7 @@ Fourth tone. Sharp, decisive.
 
 SIX settles. A lid over possibility.
 
-*六 = six = liù*
+_六 = six = liù_
 
 A slash cuts across the void—
 
@@ -281,11 +283,11 @@ A slash cuts across the void—
 # PINYIN: qī
 # MEANING: seven
 
-{char:七}
+【七】
 
 Seven children draw slashes across the night sky with sparklers, leaving trails of light.
 
-*"Chee!"* they cry — the sound of celebration.
+"Chee!"* they cry — the sound of celebration.
 
 "We are *SEVEN*," they laugh. "We are the lucky cut. The slash that divides perfectly."
 
@@ -302,7 +304,7 @@ First tone. High and bright, like children's laughter.
 
 SEVEN blazes into memory.
 
-*七 = seven = qī*
+_七 = seven = qī_
 
 Paths diverge—
 
@@ -313,11 +315,11 @@ Paths diverge—
 # PINYIN: bā
 # MEANING: eight
 
-{char:八}
+【八】
 
 Two strokes spread like wings, like paths diverging, like separation and possibility.
 
-*"Baaaa!"* — the call of something dividing.
+"Baaaa!"* — the call of something dividing.
 
 "I am *EIGHT*," says the split. "I am the choice. I am the fork in the road. I am what happens when one becomes two becomes *many*."
 
@@ -334,7 +336,7 @@ First tone. Open and spreading.
 
 EIGHT spreads into memory. Divergence. Possibility.
 
-*八 = eight = bā*
+_八 = eight = bā_
 
 Something curves—
 
@@ -345,11 +347,11 @@ Something curves—
 # PINYIN: jiǔ
 # MEANING: nine
 
-{char:九}
+【九】
 
 A curving hook bends like a question mark, like something almost complete.
 
-*"Jiǔ..."* it whispers — the sound rising and falling uncertainly.
+"Jiǔ..."* it whispers — the sound rising and falling uncertainly.
 
 "I am *NINE*," says the hook. "I am almost. I am *nearly there*. I am the step before completion."
 
@@ -366,7 +368,7 @@ Third tone. Dipping, questioning, almost there.
 
 NINE hooks into memory. The almost. The nearly.
 
-*九 = nine = jiǔ*
+_九 = nine = jiǔ_
 
 And then—
 
@@ -379,11 +381,11 @@ A cross marks the spot.
 # PINYIN: shí
 # MEANING: ten
 
-{char:十}
+【十】
 
 A perfect cross. Horizontal meets vertical. The count is complete.
 
-*"Shí?"* it asks — rising, questioning, surprised by its own existence. "Why ten? Why here? Why *complete*?"
+"Shí?"* it asks — rising, questioning, surprised by its own existence. "Why ten? Why here? Why *complete*?"
 
 "I am *TEN*," says the cross. "I am the end of counting. I am the beginning of counting again. I am the cycle."
 
@@ -400,7 +402,7 @@ Second tone. Rising. Curious. Complete.
 
 TEN crosses into memory. The completion. The new beginning.
 
-*十 = ten = shí*
+_十 = ten = shí_
 
 The universe has counted itself into existence.
 
@@ -413,13 +415,13 @@ But who was counting?
 # PINYIN: kǒu
 # MEANING: mouth
 
-{char:口}
+【口】
 
 A perfect square opens in the void.
 
 It is a *MOUTH*.
 
-*"Kǒu..."* it speaks — and the word comes from *within* the shape. Clearly spoken through parted lips.
+"Kǒu..."* it speaks — and the word comes from *within* the shape. Clearly spoken through parted lips.
 
 "I am *MOUTH*," it says. "I spoke the numbers. I counted the universe into being. I am the first word."
 
@@ -436,7 +438,7 @@ Third tone. Dipping, like a mouth closing and opening.
 
 The MOUTH settles. The First Speaker. Yours.
 
-*口 = mouth = kǒu*
+_口 = mouth = kǒu_
 
 The MOUTH looks up—
 
@@ -447,11 +449,11 @@ The MOUTH looks up—
 # PINYIN: rì
 # MEANING: day / sun
 
-{char:日}
+【日】
 
 The MOUTH looks up and sees a window to the blazing sun.
 
-*"REE!"* — the sun yells sharply to wake everything that now exists.
+"REE!"* — the sun yells sharply to wake everything that now exists.
 
 "I am *DAY*," says the sun-window. "I am the first light. The first heat. The first *time*."
 
@@ -468,7 +470,7 @@ Fourth tone. Sharp, like sunlight.
 
 DAY blazes into memory.
 
-*日 = day/sun = rì*
+_日 = day/sun = rì_
 
 The MOUTH looks to the side—
 
@@ -479,11 +481,11 @@ The MOUTH looks to the side—
 # PINYIN: yuè
 # MEANING: month / moon
 
-{char:月}
+【月】
 
 A crescent appears. Softer than the sun. Patient.
 
-*"Yuè..."* it whispers as each month turns.
+"Yuè..."* it whispers as each month turns.
 
 "I am *MONTH*," says the crescent moon. "I am the slower count. The gentler time. The mark of passages."
 
@@ -500,7 +502,7 @@ Fourth tone. Gentle but definite.
 
 MONTH settles into memory. The patient counter.
 
-*月 = month/moon = yuè*
+_月 = month/moon = yuè_
 
 The MOUTH looks down—
 
@@ -511,11 +513,11 @@ The MOUTH looks down—
 # PINYIN: tián
 # MEANING: rice field
 
-{char:田}
+【田】
 
 Below, a grid appears. A perfect division of land. The first agriculture.
 
-*"Tián?"* the field asks — rising, muddy, curious. "Why so divided? Why so *contained*?"
+"Tián?"* the field asks — rising, muddy, curious. "Why so divided? Why so *contained*?"
 
 "I am *RICE FIELD*," says the grid. "I am where food comes from. I am the first cultivation. I am *civilization*."
 
@@ -532,7 +534,7 @@ Second tone. Rising from the earth.
 
 RICE FIELD settles. The grid. The cultivation.
 
-*田 = rice field = tián*
+_田 = rice field = tián_
 
 And reflected in the water of the field—
 
@@ -543,13 +545,13 @@ And reflected in the water of the field—
 # PINYIN: mù
 # MEANING: eye
 
-{char:目}
+【目】
 
 In the flooded paddies, a reflection stares back.
 
 It is an *EYE*.
 
-*"MOO!"* it yells sharply — startled, seeing itself for the first time.
+"MOO!"* it yells sharply — startled, seeing itself for the first time.
 
 "I am *EYE*," says the reflection. "I see what was counted. I witness what was spoken. I am *awareness*."
 
@@ -566,7 +568,7 @@ Fourth tone. Sharp and seeing.
 
 The EYE settles. The Witness. The one who sees all that Genesis created.
 
-*目 = eye = mù*
+_目 = eye = mù_
 
 -> case_complete
 
@@ -577,7 +579,7 @@ You find yourself back at your desk in the Ministry. The file is closed. Your ha
 
 Inside you, fifteen spirits hum quietly:
 
-*一二三四五六七八九十口日月田目*
+_一二三四五六七八九十口日月田目_
 
 They are bound. They are yours. They are the first lesson of Genesis.
 
@@ -593,7 +595,7 @@ She slides another file onto your desk.
 
 But that is a story for another day.
 
-*案件 #001 — 結案*
-*Case #001 — Closed*
+_案件 #001 — 結案_
+_Case #001 — Closed_
 
 -> END

@@ -47,13 +47,17 @@ export function StoryProvider({ children, initialStory }: StoryProviderProps) {
   const [storyJson, setStoryJson] = useState<object | null>(initialStory || null);
 
   // Initialize story when JSON is available
-  const initializeStory = useCallback((json: object) => {
+  const initializeStory = useCallback((json: object | string) => {
     try {
-      const newStory = new Story(json);
+      // inkjs Story constructor expects JSON string or object
+      // Ensure we're passing it correctly
+      const storyContent = typeof json === 'string' ? json : JSON.stringify(json);
+      const newStory = new Story(storyContent);
       setStory(newStory);
       setError(null);
       return newStory;
     } catch (e) {
+      console.error('Story initialization error:', e);
       setError(e instanceof Error ? e.message : 'Failed to load story');
       return null;
     }
