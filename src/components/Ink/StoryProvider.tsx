@@ -8,8 +8,15 @@ interface Choice {
   index: number;
 }
 
+interface StoryLine {
+  text: string;
+  tags: string[];
+}
+
 interface StoryContextType {
   paragraphs: string[];
+  lines: StoryLine[];
+  currentTags: string[];
   choices: Choice[];
   canContinue: boolean;
   isLoading: boolean;
@@ -40,6 +47,8 @@ interface StoryProviderProps {
 export function StoryProvider({ children, initialStory }: StoryProviderProps) {
   const [story, setStory] = useState<Story | null>(null);
   const [paragraphs, setParagraphs] = useState<string[]>([]);
+  const [lines, setLines] = useState<StoryLine[]>([]);
+  const [currentTags, setCurrentTags] = useState<string[]>([]);
   const [choices, setChoices] = useState<Choice[]>([]);
   const [canContinue, setCanContinue] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -49,8 +58,6 @@ export function StoryProvider({ children, initialStory }: StoryProviderProps) {
   // Initialize story when JSON is available
   const initializeStory = useCallback((json: object | string) => {
     try {
-      // inkjs Story constructor expects JSON string or object
-      // Ensure we're passing it correctly
       const storyContent = typeof json === 'string' ? json : JSON.stringify(json);
       const newStory = new Story(storyContent);
       setStory(newStory);
@@ -67,6 +74,8 @@ export function StoryProvider({ children, initialStory }: StoryProviderProps) {
   const loadStory = useCallback((json: object) => {
     setIsLoading(true);
     setParagraphs([]);
+    setLines([]);
+    setCurrentTags([]);
     setChoices([]);
     setStoryJson(json);
     const newStory = initializeStory(json);
@@ -81,15 +90,28 @@ export function StoryProvider({ children, initialStory }: StoryProviderProps) {
     if (!story) return;
 
     const newParagraphs: string[] = [];
+    const newLines: StoryLine[] = [];
+    let latestTags: string[] = [];
 
     while (story.canContinue) {
       const text = story.Continue();
+      // Get tags for this line - inkjs stores them in currentTags
+      const tags = story.currentTags || [];
+
       if (text && text.trim()) {
         newParagraphs.push(text.trim());
+        newLines.push({ text: text.trim(), tags: [...tags] });
+      }
+
+      // Keep track of the latest tags
+      if (tags.length > 0) {
+        latestTags = [...tags];
       }
     }
 
     setParagraphs((prev) => [...prev, ...newParagraphs]);
+    setLines((prev) => [...prev, ...newLines]);
+    setCurrentTags(latestTags);
     setCanContinue(story.canContinue);
 
     // Update choices
@@ -106,8 +128,6 @@ export function StoryProvider({ children, initialStory }: StoryProviderProps) {
 
     story.ChooseChoiceIndex(index);
     setChoices([]);
-
-    // Continue after choice
     continueStory();
   }, [story, continueStory]);
 
@@ -127,6 +147,8 @@ export function StoryProvider({ children, initialStory }: StoryProviderProps) {
   const restart = useCallback(() => {
     if (storyJson) {
       setParagraphs([]);
+      setLines([]);
+      setCurrentTags([]);
       setChoices([]);
       loadStory(storyJson);
     }
@@ -151,6 +173,8 @@ export function StoryProvider({ children, initialStory }: StoryProviderProps) {
 
   const value: StoryContextType = {
     paragraphs,
+    lines,
+    currentTags,
     choices,
     canContinue,
     isLoading,

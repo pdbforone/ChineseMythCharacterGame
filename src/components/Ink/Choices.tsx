@@ -6,6 +6,7 @@ import { cn } from '@/lib/cn';
 
 interface ChoicesProps {
   className?: string;
+  onChoice?: (index: number) => void;
 }
 
 const containerVariants = {
@@ -32,10 +33,15 @@ const itemVariants = {
   }
 };
 
-export function Choices({ className }: ChoicesProps) {
+export function Choices({ className, onChoice }: ChoicesProps) {
   const { choices, makeChoice } = useStory();
 
   if (choices.length === 0) return null;
+
+  const handleClick = (index: number) => {
+    onChoice?.(index);
+    makeChoice(index);
+  };
 
   return (
     <motion.div
@@ -50,7 +56,7 @@ export function Choices({ className }: ChoicesProps) {
           variants={itemVariants}
           whileHover={{ scale: 1.01 }}
           whileTap={{ scale: 0.99 }}
-          onClick={() => makeChoice(choice.index)}
+          onClick={() => handleClick(choice.index)}
           className="choice-button group"
         >
           <span className="text-ink-faded group-hover:text-spirit-glow transition-colors mr-3">
