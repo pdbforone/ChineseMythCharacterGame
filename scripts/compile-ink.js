@@ -5,7 +5,8 @@
  *
  * Usage: node scripts/compile-ink.js
  *
- * Requires: inklecate (npm install inklecate)
+ * Note: Requires inklecate CLI. If not available, pre-compiled JSON files
+ * will be used. Download inklecate from: https://github.com/inkle/ink/releases
  */
 
 const { execSync } = require('child_process');
@@ -25,14 +26,27 @@ async function compileInkFiles() {
   }
 
   let compiled = 0;
+  let skipped = 0;
   let errors = 0;
 
   for (const inkFile of inkFiles) {
     const outputFile = inkFile + '.json';
     const relativePath = path.relative(process.cwd(), inkFile);
 
+    // Check if JSON already exists and is newer than the .ink file
+    if (fs.existsSync(outputFile)) {
+      const inkStat = fs.statSync(inkFile);
+      const jsonStat = fs.statSync(outputFile);
+
+      if (jsonStat.mtime > inkStat.mtime) {
+        console.log(`  ○ ${relativePath} (up to date)`);
+        skipped++;
+        continue;
+      }
+    }
+
     try {
-      // Use inklecate to compile
+      // Try using inklecate to compile
       execSync(`npx inklecate -o "${outputFile}" "${inkFile}"`, {
         stdio: 'pipe',
       });
@@ -40,13 +54,23 @@ async function compileInkFiles() {
       console.log(`  ✓ ${relativePath} → ${path.basename(outputFile)}`);
       compiled++;
     } catch (error) {
-      console.error(`  ✗ ${relativePath}`);
-      console.error(`    Error: ${error.message}`);
-      errors++;
+      // Check if pre-compiled JSON exists
+      if (fs.existsSync(outputFile)) {
+        console.log(`  ⚠ ${relativePath} (using existing JSON, inklecate not available)`);
+        skipped++;
+      } else {
+        console.error(`  ✗ ${relativePath}`);
+        console.error(`    Error: inklecate not found. Download from https://github.com/inkle/ink/releases`);
+        errors++;
+      }
     }
   }
 
-  console.log(`\n📚 Compiled ${compiled} file(s), ${errors} error(s)\n`);
+  console.log(`\n📚 Compiled: ${compiled}, Skipped: ${skipped}, Errors: ${errors}\n`);
+
+  if (errors > 0) {
+    console.log('💡 Tip: Install inklecate CLI to compile new .ink files');
+  }
 }
 
 // Run
