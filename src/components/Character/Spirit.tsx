@@ -21,44 +21,48 @@ const sizeClasses = {
   large: 'text-8xl md:text-[10rem]',
 };
 
-// Floating particles around the character - more visible
+// Floating particles around the character
 function SpiritParticles({ isBound = false }: { isBound?: boolean }) {
   const particles = Array.from({ length: 12 });
   const color = isBound ? 'rgba(45, 90, 61, 0.8)' : 'rgba(201, 162, 39, 0.9)';
 
   return (
-    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+    <>
       {particles.map((_, i) => {
         const angle = (i / particles.length) * Math.PI * 2;
-        const radius = 100;
-        const delay = i * 0.15;
+        const radius = 120;
+        const delay = i * 0.12;
 
         return (
           <motion.div
             key={i}
-            className="absolute rounded-full"
+            className="absolute rounded-full pointer-events-none"
             style={{
-              width: 10,
-              height: 10,
+              width: 12,
+              height: 12,
               backgroundColor: color,
-              boxShadow: `0 0 15px ${color}, 0 0 30px ${color}`,
+              boxShadow: `0 0 20px ${color}, 0 0 40px ${color}`,
+              left: '50%',
+              top: '50%',
+              marginLeft: -6,
+              marginTop: -6,
             }}
             animate={{
               x: [
-                Math.cos(angle) * radius * 0.4,
+                Math.cos(angle) * radius * 0.3,
                 Math.cos(angle) * radius,
-                Math.cos(angle) * radius * 0.4,
+                Math.cos(angle) * radius * 0.3,
               ],
               y: [
-                Math.sin(angle) * radius * 0.4,
+                Math.sin(angle) * radius * 0.3,
                 Math.sin(angle) * radius,
-                Math.sin(angle) * radius * 0.4,
+                Math.sin(angle) * radius * 0.3,
               ],
-              opacity: [0.2, 1, 0.2],
-              scale: [0.5, 1.2, 0.5],
+              opacity: [0.3, 1, 0.3],
+              scale: [0.6, 1.3, 0.6],
             }}
             transition={{
-              duration: 3,
+              duration: 2.5,
               delay,
               repeat: Infinity,
               ease: 'easeInOut',
@@ -66,7 +70,7 @@ function SpiritParticles({ isBound = false }: { isBound?: boolean }) {
           />
         );
       })}
-    </div>
+    </>
   );
 }
 
@@ -76,17 +80,52 @@ function BindingFlash({ active }: { active: boolean }) {
     <AnimatePresence>
       {active && (
         <motion.div
-          className="absolute inset-0 rounded-full pointer-events-none"
+          className="absolute rounded-full pointer-events-none"
           style={{
-            background: 'radial-gradient(circle, rgba(201, 162, 39, 0.6) 0%, transparent 70%)',
+            width: 300,
+            height: 300,
+            left: '50%',
+            top: '50%',
+            marginLeft: -150,
+            marginTop: -150,
+            background: 'radial-gradient(circle, rgba(201, 162, 39, 0.8) 0%, transparent 70%)',
           }}
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: [0, 1, 0], scale: [0.5, 2.5, 3] }}
+          initial={{ opacity: 0, scale: 0.3 }}
+          animate={{ opacity: [0, 1, 0], scale: [0.3, 1.5, 2] }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
         />
       )}
     </AnimatePresence>
+  );
+}
+
+// Glow ring behind character
+function GlowRing({ isBound = false }: { isBound?: boolean }) {
+  return (
+    <motion.div
+      className="absolute rounded-full pointer-events-none"
+      style={{
+        width: 250,
+        height: 250,
+        left: '50%',
+        top: '50%',
+        marginLeft: -125,
+        marginTop: -125,
+        background: isBound
+          ? 'radial-gradient(circle, rgba(45, 90, 61, 0.3) 0%, transparent 70%)'
+          : 'radial-gradient(circle, rgba(201, 162, 39, 0.25) 0%, transparent 70%)',
+      }}
+      animate={{
+        scale: [1, 1.2, 1],
+        opacity: [0.4, 0.7, 0.4],
+      }}
+      transition={{
+        duration: 3,
+        repeat: Infinity,
+        ease: 'easeInOut',
+      }}
+    />
   );
 }
 
@@ -108,7 +147,7 @@ export function Spirit({
     if (isBound && !prevBound) {
       setShowBindFlash(true);
       onBind?.();
-      setTimeout(() => setShowBindFlash(false), 800);
+      setTimeout(() => setShowBindFlash(false), 600);
     }
     setPrevBound(isBound);
   }, [isBound, prevBound, onBind]);
@@ -118,98 +157,76 @@ export function Spirit({
       initial={{ opacity: 0, scale: 0.5 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className={cn('relative text-center py-16 my-8', className)}
+      className={cn('text-center py-8', className)}
     >
-      {/* Particle effects */}
-      <SpiritParticles isBound={isBound} />
-
-      {/* Binding flash */}
-      <BindingFlash active={showBindFlash} />
-
-      {/* Outer glow ring */}
-      <motion.div
-        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 md:w-80 md:h-80 rounded-full pointer-events-none"
-        style={{
-          background: isBound
-            ? 'radial-gradient(circle, rgba(45, 90, 61, 0.2) 0%, transparent 70%)'
-            : 'radial-gradient(circle, rgba(201, 162, 39, 0.2) 0%, transparent 70%)',
-        }}
-        animate={{
-          scale: [1, 1.15, 1],
-          opacity: [0.3, 0.6, 0.3],
-        }}
-        transition={{
-          duration: 4,
-          repeat: Infinity,
-          ease: 'easeInOut',
-        }}
-      />
-
-      {/* The character itself */}
-      <motion.div
-        className={cn(
-          'relative font-chinese transition-colors duration-700 z-10',
-          sizeClasses[size],
-          isBound ? 'text-spirit-bound' : 'text-spirit-glow'
-        )}
-        animate={
-          isBound
-            ? { y: 0 }
-            : {
-                y: [-8, 8, -8],
-              }
-        }
-        transition={{
-          duration: 4,
-          repeat: Infinity,
-          ease: 'easeInOut',
-        }}
-        style={{
-          textShadow: isBound
-            ? '0 0 30px rgba(45, 90, 61, 0.8), 0 0 60px rgba(45, 90, 61, 0.4)'
-            : '0 0 40px rgba(201, 162, 39, 0.8), 0 0 80px rgba(201, 162, 39, 0.5), 0 0 120px rgba(201, 162, 39, 0.3)',
-        }}
+      {/* Character wrapper - particles orbit around this */}
+      <div
+        className="relative flex items-center justify-center mx-auto"
+        style={{ width: 280, height: 280 }}
       >
-        {character}
-      </motion.div>
+        {/* Glow ring */}
+        <GlowRing isBound={isBound} />
 
-      {/* Info display with stagger animation */}
+        {/* Particle effects */}
+        <SpiritParticles isBound={isBound} />
+
+        {/* Binding flash */}
+        <BindingFlash active={showBindFlash} />
+
+        {/* The character itself - centered via flexbox */}
+        <motion.div
+          className={cn(
+            'font-chinese z-10',
+            sizeClasses[size],
+            isBound ? 'text-spirit-bound' : 'text-spirit-glow'
+          )}
+          animate={
+            isBound
+              ? { y: 0 }
+              : { y: [-6, 6, -6] }
+          }
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            ease: 'easeInOut',
+          }}
+          style={{
+            textShadow: isBound
+              ? '0 0 30px rgba(45, 90, 61, 0.8), 0 0 60px rgba(45, 90, 61, 0.4)'
+              : '0 0 40px rgba(201, 162, 39, 0.8), 0 0 80px rgba(201, 162, 39, 0.5), 0 0 120px rgba(201, 162, 39, 0.3)',
+          }}
+        >
+          {character}
+        </motion.div>
+      </div>
+
+      {/* Info display */}
       {showInfo && (pinyin || meaning) && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.6 }}
-          className="relative mt-8 space-y-3 z-10"
+          className="mt-6 space-y-2"
         >
           {pinyin && (
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.6 }}
-              className="font-ui text-ink-faded text-xl tracking-widest"
-            >
+            <p className="font-ui text-ink-faded text-xl tracking-widest">
               {pinyin}
-            </motion.p>
+            </p>
           )}
           {meaning && (
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.7 }}
-              className="font-body text-ink text-2xl"
-            >
+            <p className="font-body text-ink text-2xl">
               {meaning}
-            </motion.p>
+            </p>
           )}
         </motion.div>
       )}
 
-      {/* Bound/Unbound stamp with seal effect */}
+      {/* Bound/Unbound stamp */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8, rotate: -15 }}
         animate={{ opacity: 1, scale: 1, rotate: -3 }}
         transition={{ delay: 0.8, duration: 0.4, type: 'spring' }}
-        className="relative mt-8 z-10"
+        className="mt-6"
       >
         <span
           className={cn(
