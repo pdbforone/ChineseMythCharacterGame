@@ -84,7 +84,6 @@ function GameContent() {
         character: currentCharacter.character,
         pinyin: currentCharacter.pinyin,
         meaning: currentCharacter.meaning,
-        boundAt: new Date().toISOString(),
         lessonId: 1
       });
     }
