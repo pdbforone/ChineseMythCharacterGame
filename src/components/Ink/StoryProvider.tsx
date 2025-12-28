@@ -128,6 +128,16 @@ export function StoryProvider({ children, initialStory }: StoryProviderProps) {
     }
   }, [storyJson, loadStory]);
 
+  // Initialize story on mount if initialStory is provided
+  useEffect(() => {
+    if (initialStory && !story) {
+      const newStory = initializeStory(initialStory);
+      if (newStory) {
+        setCanContinue(newStory.canContinue);
+      }
+    }
+  }, [initialStory, story, initializeStory]);
+
   // Auto-continue on initial load
   useEffect(() => {
     if (story && story.canContinue && paragraphs.length === 0) {
