@@ -50,11 +50,7 @@ It is utterly, impossibly *alone*.
 -> encounter_one
 
 === encounter_one ===
-# CHAR: 一
-# PINYIN: yī
-# MEANING: one
-
-The line speaks without a mouth.
+The line speaks without a mouth. # CHAR: 一 # PINYIN: yī # MEANING: one
 
 【一】
 
