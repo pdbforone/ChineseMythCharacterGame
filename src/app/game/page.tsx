@@ -1,13 +1,12 @@
 'use client';
 
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { StoryProvider, useStory, Paragraph, Choices } from '@/components/Ink';
 import { CaseFile } from '@/components/Bureau/CaseFile';
 import { Spirit } from '@/components/Character/Spirit';
 import { useGameStore } from '@/stores/gameStore';
-import { cn } from '@/lib/cn';
 
 // Import the compiled Ink story JSON
 import lesson01Story from '@/ink/lessons/lesson01.ink.json';
@@ -23,10 +22,10 @@ function ScreenShakeWrapper({
   return (
     <motion.div
       animate={shake ? {
-        x: [0, -4, 4, -3, 3, -2, 2, 0],
-        rotate: [0, -0.5, 0.5, -0.3, 0.3, 0]
+        x: [0, -6, 6, -4, 4, -2, 2, 0],
+        rotate: [0, -1, 1, -0.5, 0.5, 0]
       } : {}}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.6 }}
     >
       {children}
     </motion.div>
@@ -34,10 +33,9 @@ function ScreenShakeWrapper({
 }
 
 function GameContent() {
-  const { paragraphs, choices, canContinue, continueStory, isLoading, error, getVariable } = useStory();
+  const { paragraphs, choices, canContinue, continueStory, isLoading, error } = useStory();
   const { bindCharacter, isCharacterBound } = useGameStore();
   const [screenShake, setScreenShake] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
 
   // Extract current character from Ink tags in paragraphs
   const [currentCharacter, setCurrentCharacter] = useState<{
@@ -47,32 +45,34 @@ function GameContent() {
   } | null>(null);
 
   // Parse character info from tags in the story
+  // Tags are on separate lines, so we need to look across all recent paragraphs
   useEffect(() => {
-    // Look for character tags in recent paragraphs
-    const recentParagraphs = paragraphs.slice(-5);
-    let charInfo: typeof currentCharacter = null;
+    const recentParagraphs = paragraphs.slice(-10);
+    let character = '';
+    let pinyin = '';
+    let meaning = '';
 
     for (const p of recentParagraphs) {
       const charMatch = p.match(/# CHAR: (.+)/);
       const pinyinMatch = p.match(/# PINYIN: (.+)/);
       const meaningMatch = p.match(/# MEANING: (.+)/);
 
-      if (charMatch) {
-        charInfo = {
-          character: charMatch[1],
-          pinyin: pinyinMatch?.[1] || '',
-          meaning: meaningMatch?.[1] || ''
-        };
-      }
+      if (charMatch) character = charMatch[1].trim();
+      if (pinyinMatch) pinyin = pinyinMatch[1].trim();
+      if (meaningMatch) meaning = meaningMatch[1].trim();
     }
 
-    setCurrentCharacter(charInfo);
+    if (character) {
+      setCurrentCharacter({ character, pinyin, meaning });
+    } else {
+      setCurrentCharacter(null);
+    }
   }, [paragraphs]);
 
   // Trigger screen shake for dramatic moments
   const triggerShake = useCallback(() => {
     setScreenShake(true);
-    setTimeout(() => setScreenShake(false), 500);
+    setTimeout(() => setScreenShake(false), 600);
   }, []);
 
   // Handle binding animation
@@ -88,16 +88,6 @@ function GameContent() {
       });
     }
   }, [currentCharacter, bindCharacter, triggerShake]);
-
-  // Auto-scroll to bottom when content changes
-  useEffect(() => {
-    if (containerRef.current) {
-      containerRef.current.scrollTo({
-        top: containerRef.current.scrollHeight,
-        behavior: 'smooth'
-      });
-    }
-  }, [paragraphs]);
 
   if (isLoading) {
     return (
@@ -127,7 +117,7 @@ function GameContent() {
 
   return (
     <ScreenShakeWrapper shake={screenShake}>
-      <div ref={containerRef} className="space-y-6 max-h-[70vh] overflow-y-auto pr-2 scrollbar-thin">
+      <div className="space-y-6">
         {/* Story paragraphs */}
         <div className="prose prose-invert max-w-none">
           <AnimatePresence mode="popLayout">
@@ -136,7 +126,7 @@ function GameContent() {
                 key={`p-${index}-${text.substring(0, 20)}`}
                 text={text}
                 index={index}
-                typewriter={index === displayParagraphs.length - 1 && displayParagraphs.length <= 5}
+                typewriter={false}
               />
             ))}
           </AnimatePresence>
@@ -147,10 +137,10 @@ function GameContent() {
           {currentCharacter && (
             <motion.div
               key={currentCharacter.character}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
               <Spirit
                 character={currentCharacter.character}
@@ -174,7 +164,7 @@ function GameContent() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
-              transition={{ delay: 0.5, duration: 0.3 }}
+              transition={{ delay: 0.3, duration: 0.3 }}
               onClick={continueStory}
               whileHover={{ x: 4 }}
               whileTap={{ scale: 0.98 }}

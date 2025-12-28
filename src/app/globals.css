@@ -231,15 +231,16 @@ body {
    ATMOSPHERIC EFFECTS
    ============================================ */
 
-/* Vignette overlay */
+/* Vignette overlay - dark edges for cinematic focus */
 .vignette {
   position: fixed;
   inset: 0;
   pointer-events: none;
   background: radial-gradient(
     ellipse at center,
-    transparent 40%,
-    rgba(10, 10, 11, 0.4) 100%
+    transparent 30%,
+    rgba(0, 0, 0, 0.3) 70%,
+    rgba(0, 0, 0, 0.7) 100%
   );
   z-index: 100;
 }
