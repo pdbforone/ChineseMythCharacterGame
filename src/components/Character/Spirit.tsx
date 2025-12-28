@@ -21,37 +21,53 @@ const sizeClasses = {
   large: 'text-8xl md:text-[10rem]',
 };
 
-// Floating particles around the character
-function SpiritParticles({ count = 8, isBound = false }: { count?: number; isBound?: boolean }) {
+// Floating particles around the character - more visible
+function SpiritParticles({ isBound = false }: { isBound?: boolean }) {
+  const particles = Array.from({ length: 12 });
+  const color = isBound ? 'rgba(45, 90, 61, 0.8)' : 'rgba(201, 162, 39, 0.9)';
+
   return (
-    <div className="absolute inset-0 pointer-events-none overflow-hidden">
-      {Array.from({ length: count }).map((_, i) => (
-        <motion.div
-          key={i}
-          className={cn(
-            'absolute w-1 h-1 rounded-full',
-            isBound ? 'bg-spirit-bound' : 'bg-spirit-glow'
-          )}
-          initial={{
-            x: '50%',
-            y: '50%',
-            opacity: 0,
-            scale: 0
-          }}
-          animate={{
-            x: `${50 + Math.cos((i / count) * Math.PI * 2) * 40}%`,
-            y: `${50 + Math.sin((i / count) * Math.PI * 2) * 40}%`,
-            opacity: [0, 0.8, 0],
-            scale: [0, 1.5, 0]
-          }}
-          transition={{
-            duration: 3,
-            delay: i * 0.2,
-            repeat: Infinity,
-            ease: 'easeInOut'
-          }}
-        />
-      ))}
+    <div className="absolute inset-0 pointer-events-none">
+      {particles.map((_, i) => {
+        const angle = (i / particles.length) * Math.PI * 2;
+        const radius = 120 + Math.sin(i * 0.5) * 20;
+        const delay = i * 0.15;
+
+        return (
+          <motion.div
+            key={i}
+            className="absolute left-1/2 top-1/2 rounded-full"
+            style={{
+              width: 8,
+              height: 8,
+              backgroundColor: color,
+              boxShadow: `0 0 12px ${color}, 0 0 24px ${color}`,
+              marginLeft: -4,
+              marginTop: -4,
+            }}
+            animate={{
+              x: [
+                Math.cos(angle) * radius * 0.3,
+                Math.cos(angle) * radius,
+                Math.cos(angle) * radius * 0.3,
+              ],
+              y: [
+                Math.sin(angle) * radius * 0.3,
+                Math.sin(angle) * radius,
+                Math.sin(angle) * radius * 0.3,
+              ],
+              opacity: [0, 1, 0],
+              scale: [0.5, 1.2, 0.5],
+            }}
+            transition={{
+              duration: 3,
+              delay,
+              repeat: Infinity,
+              ease: 'easeInOut',
+            }}
+          />
+        );
+      })}
     </div>
   );
 }
@@ -62,9 +78,12 @@ function BindingFlash({ active }: { active: boolean }) {
     <AnimatePresence>
       {active && (
         <motion.div
-          className="absolute inset-0 bg-spirit-glow rounded-full"
+          className="absolute inset-0 rounded-full pointer-events-none"
+          style={{
+            background: 'radial-gradient(circle, rgba(201, 162, 39, 0.6) 0%, transparent 70%)',
+          }}
           initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: [0, 0.6, 0], scale: [0.5, 2, 2.5] }}
+          animate={{ opacity: [0, 1, 0], scale: [0.5, 2.5, 3] }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         />
@@ -101,7 +120,7 @@ export function Spirit({
       initial={{ opacity: 0, scale: 0.5 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className={cn('relative text-center py-12', className)}
+      className={cn('relative text-center py-16 my-8', className)}
     >
       {/* Particle effects */}
       <SpiritParticles isBound={isBound} />
@@ -111,26 +130,27 @@ export function Spirit({
 
       {/* Outer glow ring */}
       <motion.div
-        className={cn(
-          'absolute inset-0 m-auto w-48 h-48 md:w-64 md:h-64 rounded-full opacity-20',
-          isBound ? 'bg-spirit-bound' : 'bg-spirit-glow'
-        )}
+        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 md:w-80 md:h-80 rounded-full pointer-events-none"
+        style={{
+          background: isBound
+            ? 'radial-gradient(circle, rgba(45, 90, 61, 0.2) 0%, transparent 70%)'
+            : 'radial-gradient(circle, rgba(201, 162, 39, 0.2) 0%, transparent 70%)',
+        }}
         animate={{
-          scale: [1, 1.1, 1],
-          opacity: [0.1, 0.2, 0.1]
+          scale: [1, 1.15, 1],
+          opacity: [0.3, 0.6, 0.3],
         }}
         transition={{
           duration: 4,
           repeat: Infinity,
-          ease: 'easeInOut'
+          ease: 'easeInOut',
         }}
-        style={{ filter: 'blur(40px)' }}
       />
 
       {/* The character itself */}
       <motion.div
         className={cn(
-          'relative font-chinese transition-colors duration-700',
+          'relative font-chinese transition-colors duration-700 z-10',
           sizeClasses[size],
           isBound ? 'text-spirit-bound' : 'text-spirit-glow'
         )}
@@ -138,23 +158,18 @@ export function Spirit({
           isBound
             ? { y: 0 }
             : {
-                y: [-5, 5, -5],
-                textShadow: [
-                  '0 0 30px rgba(201, 162, 39, 0.5), 0 0 60px rgba(201, 162, 39, 0.2)',
-                  '0 0 50px rgba(201, 162, 39, 0.8), 0 0 100px rgba(201, 162, 39, 0.4)',
-                  '0 0 30px rgba(201, 162, 39, 0.5), 0 0 60px rgba(201, 162, 39, 0.2)',
-                ]
+                y: [-8, 8, -8],
               }
         }
         transition={{
           duration: 4,
           repeat: Infinity,
-          ease: 'easeInOut'
+          ease: 'easeInOut',
         }}
         style={{
           textShadow: isBound
-            ? '0 0 20px rgba(45, 90, 61, 0.6), 0 0 40px rgba(45, 90, 61, 0.3)'
-            : '0 0 40px rgba(201, 162, 39, 0.7), 0 0 80px rgba(201, 162, 39, 0.4)'
+            ? '0 0 30px rgba(45, 90, 61, 0.8), 0 0 60px rgba(45, 90, 61, 0.4)'
+            : '0 0 40px rgba(201, 162, 39, 0.8), 0 0 80px rgba(201, 162, 39, 0.5), 0 0 120px rgba(201, 162, 39, 0.3)',
         }}
       >
         {character}
@@ -166,7 +181,7 @@ export function Spirit({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.6 }}
-          className="relative mt-8 space-y-3"
+          className="relative mt-8 space-y-3 z-10"
         >
           {pinyin && (
             <motion.p
@@ -196,7 +211,7 @@ export function Spirit({
         initial={{ opacity: 0, scale: 0.8, rotate: -15 }}
         animate={{ opacity: 1, scale: 1, rotate: -3 }}
         transition={{ delay: 0.8, duration: 0.4, type: 'spring' }}
-        className="relative mt-8"
+        className="relative mt-8 z-10"
       >
         <span
           className={cn(
