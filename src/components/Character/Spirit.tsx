@@ -27,36 +27,34 @@ function SpiritParticles({ isBound = false }: { isBound?: boolean }) {
   const color = isBound ? 'rgba(45, 90, 61, 0.8)' : 'rgba(201, 162, 39, 0.9)';
 
   return (
-    <div className="absolute inset-0 pointer-events-none">
+    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
       {particles.map((_, i) => {
         const angle = (i / particles.length) * Math.PI * 2;
-        const radius = 120 + Math.sin(i * 0.5) * 20;
+        const radius = 100;
         const delay = i * 0.15;
 
         return (
           <motion.div
             key={i}
-            className="absolute left-1/2 top-1/2 rounded-full"
+            className="absolute rounded-full"
             style={{
-              width: 8,
-              height: 8,
+              width: 10,
+              height: 10,
               backgroundColor: color,
-              boxShadow: `0 0 12px ${color}, 0 0 24px ${color}`,
-              marginLeft: -4,
-              marginTop: -4,
+              boxShadow: `0 0 15px ${color}, 0 0 30px ${color}`,
             }}
             animate={{
               x: [
-                Math.cos(angle) * radius * 0.3,
+                Math.cos(angle) * radius * 0.4,
                 Math.cos(angle) * radius,
-                Math.cos(angle) * radius * 0.3,
+                Math.cos(angle) * radius * 0.4,
               ],
               y: [
-                Math.sin(angle) * radius * 0.3,
+                Math.sin(angle) * radius * 0.4,
                 Math.sin(angle) * radius,
-                Math.sin(angle) * radius * 0.3,
+                Math.sin(angle) * radius * 0.4,
               ],
-              opacity: [0, 1, 0],
+              opacity: [0.2, 1, 0.2],
               scale: [0.5, 1.2, 0.5],
             }}
             transition={{
