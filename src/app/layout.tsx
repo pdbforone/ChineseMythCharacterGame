@@ -15,7 +15,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-void text-ink min-h-screen">
-        <div className="min-h-screen flex flex-col">
+        {/* Atmospheric overlays */}
+        <div className="vignette" aria-hidden="true" />
+        <div className="noise-overlay" aria-hidden="true" />
+        <div className="ambient-glow" aria-hidden="true" />
+
+        {/* Main content */}
+        <div className="relative min-h-screen flex flex-col z-10">
           {children}
         </div>
       </body>

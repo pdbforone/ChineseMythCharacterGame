@@ -8,6 +8,30 @@ interface ChoicesProps {
   className?: string;
 }
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      delay: 0.3,
+      staggerChildren: 0.1
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, x: -20, filter: 'blur(4px)' },
+  visible: {
+    opacity: 1,
+    x: 0,
+    filter: 'blur(0px)',
+    transition: {
+      duration: 0.4,
+      ease: [0.25, 0.46, 0.45, 0.94]
+    }
+  }
+};
+
 export function Choices({ className }: ChoicesProps) {
   const { choices, makeChoice } = useStory();
 
@@ -15,24 +39,26 @@ export function Choices({ className }: ChoicesProps) {
 
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.3, delay: 0.2 }}
-      className={cn('space-y-2 mt-6', className)}
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      className={cn('space-y-3 mt-8', className)}
     >
-      {choices.map((choice, index) => (
+      {choices.map((choice) => (
         <motion.button
           key={choice.index}
-          initial={{ opacity: 0, x: -10 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.3, delay: 0.3 + index * 0.1 }}
+          variants={itemVariants}
+          whileHover={{ scale: 1.01 }}
+          whileTap={{ scale: 0.99 }}
           onClick={() => makeChoice(choice.index)}
           className="choice-button group"
         >
           <span className="text-ink-faded group-hover:text-spirit-glow transition-colors mr-3">
             ▸
           </span>
-          {choice.text}
+          <span className="relative">
+            {choice.text}
+          </span>
         </motion.button>
       ))}
     </motion.div>
